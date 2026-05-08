@@ -1,0 +1,32 @@
+data_dir: ./data/docbank/DocBank_500K_txt
+output_dir: ./outputs
+input_files_limit: 200
+model_name: distilbert-base-uncased
+max_length: 256
+train_samples: 50
+val_samples: 10
+test_samples: 10
+batch_size: 2
+epochs: 1
+learning_rate: 3e-4
+seed: 42
+freeze_backbone: true
+unfreeze_last_n_layers: 0
+early_stopping_patience: 1
+use_mixed_precision: true
+prediction_examples: 3
+ignored_labels:
+  - figure
+  - table
+  - equation
+  - caption
+  - figure_caption
+  - table_caption
+distillation:
+  enabled: true
+  teacher_model_dir: ./outputs/models/best_model
+  student_epochs: 1
+  student_batch_size: 8
+  temperature: 2.0
+  alpha: 0.5
+  learning_rate: 1e-3
