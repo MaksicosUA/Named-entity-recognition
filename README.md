@@ -30,7 +30,7 @@ Configured in `configs/config.yaml` and removed during preprocessing:
 ## Project Structure
 
 ```text
-lesson_18/
+ner/
 ├── data/
 │   ├── docbank/
 │   │   ├── DocBank_500K_txt.zip
